@@ -1,7 +1,7 @@
 import { Category, QuizSession, ApiError } from '@/types';
 
 // Backend base URL (Gin server). Can be overridden with NEXT_PUBLIC_API_URL.
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080';
+const API_BASE_URL = 'https://alright-bev-lumaai-69a46e17.koyeb.app';
 
 async function handleResponse<T>(response: Response): Promise<T> {
   if (!response.ok) {
