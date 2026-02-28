@@ -121,3 +121,32 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Utility class for Google Sans loaded via layout head */
+.google-sans {
+  font-family: "Google Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "GRAD" 0;
+}
+
+/* Utility class for Public Sans (also loaded via layout head) */
+.public-sans {
+  font-family: "Public Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* Utility class for Bpmf Iansui (loaded via layout head) */
+.bpmf-iansui {
+  font-family: "Bpmf Iansui", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+/* Utility class for Cascadia Mono (uses system font if installed) */
+.cascadia-mono {
+  font-family: "Cascadia Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+}

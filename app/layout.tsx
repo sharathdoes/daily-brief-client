@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Crimson_Text, Inter } from 'next/font/google';
+import { Crimson_Text, Public_Sans } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 
@@ -9,9 +9,10 @@ const crimsonText = Crimson_Text({
   variable: '--font-serif',
 });
 
-const inter = Inter({
+const publicSans = Public_Sans({
   subsets: ['latin'],
-  variable: '--font-sans',
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-geist-sans',
 });
 
 export const metadata: Metadata = {
@@ -33,7 +34,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${crimsonText.variable} font-sans`}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Alyamama:wght@300..900&family=Bpmf+Iansui&family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body className={`cascadia-mono ${publicSans.variable} ${crimsonText.variable}`}>
         <ThemeProvider>
           <main className="min-h-screen bg-background text-foreground">
             {children}
