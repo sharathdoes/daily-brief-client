@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Crimson_Text, Public_Sans } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { Header } from '@/components/Header';
 
 const crimsonText = Crimson_Text({
   subsets: ['latin'],
@@ -46,9 +47,12 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className={`cascadia-mono ${publicSans.variable} ${crimsonText.variable}`}>
+      <body
+        className={`cascadia-mono ${publicSans.variable} ${crimsonText.variable}`}
+      >
         <ThemeProvider>
           <main className="min-h-screen bg-background text-foreground">
+            <Header />
             {children}
           </main>
         </ThemeProvider>

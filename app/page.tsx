@@ -1,10 +1,10 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { getCategories, generateQuiz } from "@/lib/api";
 import { useQuizStore } from "@/lib/quizStore";
 import { Category, QuizSession } from "@/types";
-import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
@@ -127,7 +127,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      <Header />
+     
 
       {/* ── Hero ─────────────────────────────────────────────────── */}
       <div className="relative overflow-hidden border-b flex flex-col justify-center">
@@ -359,6 +359,12 @@ export default function HomePage() {
                   </>
                 )}
               </Button>
+
+              <div className="mt-6  flex justify-center">
+                <Button variant="outline"  className="w-full"  asChild>
+                  <Link href="/about">Why Daily Brief? </Link>
+                </Button>
+              </div>
 
               {/* {!canStart && !isGeneratingQuiz && (
                 <p className="text-center text-xs mt-3">
