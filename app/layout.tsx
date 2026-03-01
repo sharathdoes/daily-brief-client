@@ -1,18 +1,12 @@
 import type { Metadata, Viewport } from 'next';
-import { Crimson_Text, Public_Sans } from 'next/font/google';
+import { Roboto_Slab } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { Header } from '@/components/Header';
 
-const crimsonText = Crimson_Text({
+const robotoSlab = Roboto_Slab({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
-  variable: '--font-serif',
-});
-
-const publicSans = Public_Sans({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700'],
+  weight: ['300', '400', '500', '700'],
   variable: '--font-geist-sans',
 });
 
@@ -47,9 +41,7 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body
-        className={`cascadia-mono ${publicSans.variable} ${crimsonText.variable}`}
-      >
+      <body className={robotoSlab.variable}>
         <ThemeProvider>
           <main className="min-h-screen bg-background text-foreground">
             <Header />
